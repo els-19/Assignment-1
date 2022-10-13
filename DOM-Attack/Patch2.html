@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+ 
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+ 
+<title> Test Website for DOM-XSS </title>
+ 
+<!-- Bootstrap Core CSS -->
+<link href="../../css/bootstrap.min.css" rel="stylesheet">
+ 
+<!-- Custom CSS -->
+<link href="../../css/shop-item.css" rel="stylesheet">
+ 
+<script type="text/javascript">
+
+var sanitizeHTML = function (str) {
+      var temp = document.createElement('srch');
+      temp.textContent = str;
+      return temp.innerHTML;
+};
+
+function search()
+{
+    var myurl = document.URL;
+    if(myurl.indexOf("?search=")>0)
+    {
+        document.getElementById('srch').innerHTML = sanitizeHTML("You've searched for "+unescape(myurl.substr(myurl.indexOf("?search=")+8)));
+    }
+}
+</script>
+</head>
+ 
+<body onload="javascript:search()">
+ 
+<div class="well">
+<div class="col-lg-6">  
+<p>  
+<form method='get' action=''>
+<div class="form-group">  
+ 
+<h1>Basic Webpage for Exploit DOM Based XSS</h1>
+<p>Please search for something</p>
+
+       
+<hr>
+Search on the page<br>
+<input class="form-control" width="50%" placeholder="Enter Search Item" name="search"></input> <br>
+<div align="right"> <button class="btn btn-default" type="submit" onclick="search()">Submit Button</button></div>
+ 
+</div>  
+</form>
+   
+</p>
+<p id="srch"></p>
+</div>
+ 
+ 
+</body>
+ 
+</html>
