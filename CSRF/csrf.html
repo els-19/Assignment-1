@@ -1,0 +1,43 @@
+<!-- VULNERABLE PROGRAM -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../../css/shop-item.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <h1>Basic Webpage demonstrating Cross Site Request Forgery Exploit</h1>
+    <p>Please Change your Password</p>
+    </div>
+ 
+    <div class="well">
+        <div class="col-lg-6">
+            <p><h4>Change your password</h4>  
+                <form method='get' action=''>
+                    <div class="form-group">
+                        <label></label>
+                        <input type="password" class="form-control" width="50%" placeholder="Enter new password..." name="passwd"></input> <br>
+                        <input type="password" class="form-control" width="50%" placeholder="Confirm new password" name="confirm"></input> <br>
+                        <div align="left"> <button class="btn btn-default" type="submit" name="submit" value="submit">Submit Button</button></div>
+                    </div>
+                </form>
+             </p>
+        </div>
+
+</body>
+</html>
